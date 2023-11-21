@@ -6,7 +6,7 @@ import {Text} from './src/components/Text/Text';
 function App(): JSX.Element {
   return (
     <SafeAreaView>
-      <Text bold={true} italic={true} preset="headingLarge">Luiz</Text>
+      <Text preset="headingLarge">Luiz</Text>
     </SafeAreaView>
   );
 }
