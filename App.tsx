@@ -14,8 +14,16 @@ function App(): JSX.Element {
           <Text preset="headingLarge" italic>
             Luiz
           </Text>
-          <Button title="Entrar" marginBottom="s16" />
-          <Button title="Entrar" loading={true} />
+          <Button preset="primary" title="Primary" marginBottom="s16" />
+          <Button preset="primary" disable title="Primary" marginBottom="s16" />
+          <Button preset="outline" title="Outline" marginBottom="s16" />
+          <Button
+            preset="outline"
+            loading
+            disable
+            title="Outline"
+            marginBottom="s16"
+          />
         </View>
       </SafeAreaView>
     </ThemeProvider>
