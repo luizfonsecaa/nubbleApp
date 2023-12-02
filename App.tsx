@@ -1,10 +1,10 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {SafeAreaView, View} from 'react-native';
-import {Button} from './src/components/Button/Button';
 import {ThemeProvider} from '@shopify/restyle';
 import {theme} from './src/theme/theme';
 import {Text} from './src/components/Text/Text';
+import {Icon} from './src/components/Icon/Icon';
 
 function App(): JSX.Element {
   return (
@@ -14,16 +14,8 @@ function App(): JSX.Element {
           <Text preset="headingLarge" italic>
             Luiz
           </Text>
-          <Button preset="primary" title="Primary" marginBottom="s16" />
-          <Button preset="primary" disable title="Primary" marginBottom="s16" />
-          <Button preset="outline" title="Outline" marginBottom="s16" />
-          <Button
-            preset="outline"
-            loading
-            disable
-            title="Outline"
-            marginBottom="s16"
-          />
+
+          <Icon name="trash" color="carrotSecondary" size={100} />
         </View>
       </SafeAreaView>
     </ThemeProvider>
@@ -31,3 +23,4 @@ function App(): JSX.Element {
 }
 
 export default App;
+//Icon component
