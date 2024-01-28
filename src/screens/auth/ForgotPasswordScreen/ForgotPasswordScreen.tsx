@@ -1,19 +1,29 @@
 import React from 'react';
+import {useForm} from 'react-hook-form';
+import {zodResolver} from '@hookform/resolvers/zod';
 import {Screen} from '../../../components/Screen/Screen';
 import {Text} from '../../../components/Text/Text';
-import {TextInput} from '../../../components/TextInput/TextInput';
 import {Button} from '../../../components/Button/Button';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../../routes/Routes';
-import {useResetNavigationSuccess} from '../../../hooks/useResetnavigationSuccess';
-
+import {useResetNavigationSuccess} from '../../../hooks/useResetNavigationSuccess';
+import {FormTextInput} from '../../../components/Form/FormTextInput';
+import {
+  ForgotPasswordSchema,
+  forgotPasswordSchema,
+} from './forgotPasswordSchema';
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SignUpScreen'>;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function ForgotPasswordScreen({navigation}: ScreenProps) {
   const {reset} = useResetNavigationSuccess();
-
-  function submitForm() {
-    //Todo enviar email para o usuário
+  const {control, formState, handleSubmit} = useForm<ForgotPasswordSchema>({
+    resolver: zodResolver(forgotPasswordSchema),
+    mode: 'onChange',
+  });
+  function submitForm({email}: ForgotPasswordSchema) {
+    console.log(email);
+    // Todo enviar email para o usuário
     reset({
       title: 'Enviamos as instruções para o seu email!',
       description:
@@ -30,12 +40,20 @@ export function ForgotPasswordScreen({navigation}: ScreenProps) {
       <Text preset="paragraphLarge" mb="s32">
         Digite seu e-email e enviamos as intruções para redefinição de senha{' '}
       </Text>
-      <TextInput
+      <FormTextInput
+        control={control}
+        name="email"
+        autoCapitalize="none"
         label="Email"
         placeholder="Digite seu email"
-        boxProps={{mb: 's40'}}
+        boxProps={{mb: 's20'}}
       />
-      <Button onPress={submitForm} mt="s48" title="Recuperar senha" />
+      <Button
+        disable={!formState.isValid}
+        onPress={handleSubmit(submitForm)}
+        mt="s48"
+        title="Recuperar senha"
+      />
     </Screen>
   );
 }
