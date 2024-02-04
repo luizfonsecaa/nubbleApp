@@ -1,15 +1,18 @@
 /* eslint-disable react/react-in-jsx-scope */
-import {Box} from '../Box/Box';
-import {useAppSafeArea} from '../../hooks/useAppSafeArea';
-import {Icon} from '../Icon/Icon';
-import {Text} from '../Text/Text';
+
 import {KeyboardAvoidingView, Platform, TouchableOpacity} from 'react-native';
+
+import {useNavigation} from '@react-navigation/native';
+
+import {Icon, Text, Box} from '@components';
+import {useAppTheme} from '@hooks';
+
+import {useAppSafeArea} from '../../hooks/useAppSafeArea';
+
 import {
   ScrollViewContainer,
   ViewContainer,
 } from './components/ScreenContainers';
-import {useAppTheme} from '../../hooks/useAppTheme';
-import {useNavigation} from '@react-navigation/native';
 
 interface ScreenProps {
   children: React.ReactNode;

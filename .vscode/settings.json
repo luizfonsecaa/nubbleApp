@@ -1,0 +1,8 @@
+{
+    "cSpell.words": [
+        "hookform"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+}

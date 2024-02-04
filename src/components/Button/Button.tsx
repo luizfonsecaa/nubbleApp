@@ -1,10 +1,10 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 
-import {Text} from '../Text/Text';
+import {Text, ActivityIndicator} from '@components';
+
 import {TouchableOpacityBox, TouchableOpacityBoxProps} from '../Box/Box';
+
 import {buttonPresets} from './ButtonPresets';
-import {ActivityIndicator} from '../ActivityIndicator/ActivityIndicator';
 
 export type ButtonPreset = 'primary' | 'outline';
 
