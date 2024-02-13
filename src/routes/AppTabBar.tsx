@@ -19,7 +19,7 @@ import {$shadowProps} from '@theme';
 import {AppTabBottomTabParamList} from './AppTabNavigator';
 import {ScreenToProps, mapScreenToProps} from './mapScreenToProps';
 
-type renderButtonBarProps = {
+type RenderButtonBarProps = {
   isFocused: boolean;
   tabItem: ScreenToProps;
   onPress: () => void;
@@ -36,7 +36,7 @@ export function AppTabBar({state, descriptors, navigation}: BottomTabBarProps) {
     options,
     onPress,
     onLongPress,
-  }: renderButtonBarProps) {
+  }: RenderButtonBarProps) {
     return (
       <TouchableOpacityBox
         {...$itemWrapper}

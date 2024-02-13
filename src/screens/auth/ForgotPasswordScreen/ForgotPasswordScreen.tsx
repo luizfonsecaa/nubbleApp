@@ -13,6 +13,7 @@ import {
 } from './forgotPasswordSchema';
 
 export function ForgotPasswordScreen({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   navigation,
 }: AuthScreenProps<'SignUpScreen'>) {
   const {reset} = useResetNavigationSuccess();
